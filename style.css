@@ -123,6 +123,7 @@ nav ul li a:hover{
     width: 100%;
     align-items: center;
 }
+
 .gallery-container .box img{
     width: 50%;
     border-radius: 5px;
@@ -142,3 +143,16 @@ nav ul li a:hover{
     height: 1107px;
 }
 
+/* code page */
+
+.code{
+    background-color: black;
+}
+
+.code-transition{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: transparent;
+    z-index: 1;
+}
