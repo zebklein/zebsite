@@ -156,3 +156,21 @@ nav ul li a:hover{
     color: transparent;
     z-index: 1;
 }
+
+.code-row {
+    display: flex;
+    margin-top: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .code-column {
+    flex: 50%;
+    margin: 50px;
+  }
+
+  .code-column p{
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+  }
