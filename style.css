@@ -157,20 +157,32 @@ nav ul li a:hover{
     z-index: 1;
 }
 
+.code-box {
+    margin-top: 150px;
+    margin-left: 150px;
+    margin-right: 100px;
+}
+
+
 .code-row {
     display: flex;
-    margin-top: 150px;
-    margin-left: 100px;
-    margin-right: 100px;
-  }
+    margin-bottom: 50px;
+}
   
-  .code-column {
+.code-column {
     flex: 50%;
-    margin: 50px;
-  }
+    margin: 10px;
+}
 
-  .code-column p{
+.code-column p{
     color: green;
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
-  }
+}
+
+#code-intro{
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    text-align: center;
+}
