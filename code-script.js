@@ -1,3 +1,5 @@
+// This script prints the three strings below to the 'Code' page using the DOMWriter function. 
+
 //#region anagrams
 var anagrams = "\
 #include <iostream> <br> \
@@ -162,10 +164,10 @@ int main() { <br> \
 
 // #region intro
 var intro = "The following are programs from the word-library. The word-library is a small collection\
- of useful string manipulation tools. Anagrams (to be printed on the left) is designed to generate \
+ of useful string manipulation tools. Anagrams (being printed on the left) is designed to generate \
  English-style \"name-like\" ceaser ciphers based on a given string. Generator, shown on the right, \
  generates possible passwords constructed from a set of input strings using simple substitution stregies. \
- Please see the below."
+ The programs below, along with the source code for this website, can be found at github.com/zebklein"
 // #endregion
 
 // #region generator
@@ -175,7 +177,6 @@ This content is the property of David Z Kleinsorge and affiliated parites. <br> 
 Those who are permitted to access these documents shall respect and preserve the privacy, confidentiality, and security of the project. <br> \
 The content provided herein is for educational purposes only. It is not intended to encourage or promote any illegal activities.  <br> \
 Users are reminded to use this information responsibly and in accordance with applicable laws and regulations.  <br> \
-The provider does not endorse or condone any illegal behavior. Users are solely responsible for their actions and compliance with the law. <br> \
 */ /* <br> \
 This program takes as input a text document containing strings divided into three sets: pre, body and post. When combined, a string from each set should form a \"common\" password e.g. 'mycool'+'password'+'1998' <br> \
 The output is all permutations of these three parts, with some custom character exclusion, inclusion, and swapping. <br> \
@@ -200,7 +201,6 @@ void appendPunctuation(vector<string>& v); <br> \
 <br> \
 int main(int argc, char* argv[]) { <br> \
     if (argc < 3) { throw \"Too few args\"; } <br> \
-    <br> \
     ifstream fin(argv[1]); <br> \
     if (!fin.is_open()) { throw \"File failed to open\\n\"; } <br> \
     string header; <br> \
@@ -303,10 +303,11 @@ void appendPunctuation(vector<string>& v) { <br> \
 // The following function writes text to an element in the related HTML DOM with simulated delay typing
 function DOMWriter(DOM_element, stringToPrint) {
     var linebreak = document.createElement("br");
+    // using a Promise to simulate a delay
     const delay = ms => new Promise(res => setTimeout(res, ms));
     const print_code = async () => {
-        document.getElementById(DOM_element).innerHTML = "";
         var word = "";
+        // loop through the input string, reading each word to check for the break symbol '<br>' or any nessesary spacing
         for (var i = 0; i < stringToPrint.length; ++i) {
             while (stringToPrint[i] != " " && i < stringToPrint.length) {
                 word += stringToPrint[i++];
@@ -317,6 +318,8 @@ function DOMWriter(DOM_element, stringToPrint) {
                 for (j in word) {
                     document.getElementById(DOM_element).innerHTML += word[j];
                     let d = 60;
+                    // use a step function to caluclate delay between a print
+                    // f(x) = 60 if 0<x<15, else use the inverse equation below, which moves asymptotically to x = 10
                     if (i > 15) {
                         d = Math.trunc((500/(i-5))+10);
                     }
@@ -337,6 +340,7 @@ function DOMWriter(DOM_element, stringToPrint) {
 // #endregion
 
 // #region main
+// These functions are run concurently by nature of JavaScript's call stack
 DOMWriter("code-intro", intro);
 DOMWriter("code-column-left", anagrams);
 DOMWriter("code-column-right", generator);
