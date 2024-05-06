@@ -1,1 +1,1 @@
-zebsite is currently a WIP, and is designed to feature an articstic gallery, a technical gallery, and a philosophical work.
+
