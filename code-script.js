@@ -163,11 +163,11 @@ int main() { <br> \
 // #endregion
 
 // #region intro
-var intro = "The following are programs from the word-library. The word-library is a small collection\
- of useful string manipulation tools. Anagrams (being printed on the left) is designed to generate \
- English-style \"name-like\" ceaser ciphers based on a given string. Generator, shown on the right, \
- generates possible passwords constructed from a set of input strings using simple substitution stregies. \
- The programs below, along with the source code for this website, can be found at github.com/zebklein"
+var intro = "The following are programs from the word-library. The word-library is a small collection \
+of useful string manipulation tools. Anagrams (being printed on the left) is designed to generate \
+English-style \"name-like\" ceaser ciphers based on a given string. Generator, shown on the right, \
+generates possible passwords constructed from a set of input strings using simple substitution stregies. \
+The programs below, along with the source code for this website, can be found at github.com/zebklein"
 // #endregion
 
 // #region generator
