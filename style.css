@@ -128,6 +128,7 @@ nav ul li a:hover{
 
 .gallery-container .box img{
     border-radius: 25px;
+    height: auto;
 }
 
 .gallery-container .box img:hover + figcaption{
@@ -135,7 +136,7 @@ nav ul li a:hover{
 }
 
 .gallery-container .box figure{
-    margin-bottom: 200px;
+    margin-bottom: 250px;
 }
 
 .gallery-container .box figure figcaption{
