@@ -6,7 +6,7 @@
 
 }
 
-/* nav bar */
+/* #region nav bar */
 
 nav{
     width: 100%;
@@ -42,7 +42,9 @@ nav ul li a:hover{
     color: rgb(255, 255, 255);
 }
 
-/* hero page */
+/* #endregion */
+
+/* #region hero page */
 
 .hero{
     width: 100%;
@@ -103,7 +105,9 @@ nav ul li a:hover{
     }
 }
 
-/* gallery page */
+/* #endregion */
+
+/* #region gallery page */
 
 .gallery {
     background-color: black;
@@ -162,7 +166,9 @@ nav ul li a:hover{
     height: 1107px;
 }
 
-/* code page */
+/* #endregion */
+
+/* #region code page */
 
 .code {
     background-color: black;
@@ -205,7 +211,10 @@ nav ul li a:hover{
     text-align: left;
 }
 
-/* philosophy page */
+/* #endregion */
+
+/* #region philosophy page */
+
 .philosophy {
     background-image: linear-gradient(rgb(232, 232, 232), rgb(132, 158, 215))
 }
@@ -240,3 +249,44 @@ nav ul li a:hover{
 .text-box #references{
     text-align: center;
 }
+
+/* #endregion */
+
+/* #region philosophy 2 page */
+
+.philosophy{
+    background-image: url("media/school_of_athens.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.school-of-athens{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.school-of-athens #background{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.school-of-athens .row{
+    display: flex;
+    text-align: center;
+}
+
+.school-of-athens .row .column{
+    align-items: center;
+    flex: 50%;
+}
+
+.school-of-athens .row .column img{
+    padding: 50vh 0;
+    width: 40%;
+}
+
+/* #endregion */
