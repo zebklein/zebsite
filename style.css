@@ -201,7 +201,7 @@ nav ul li a:hover{
 #code-intro{
     color: green;
     font-family: 'Courier New', Courier, monospace;
-    font-size: large;
+    font-size: 20px;
     text-align: left;
 }
 
@@ -220,7 +220,7 @@ nav ul li a:hover{
 }
 
 .text-box h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     text-align: center;
     margin: 40px;
 }
