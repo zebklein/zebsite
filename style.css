@@ -115,14 +115,12 @@ nav ul li a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 .gallery-container .box{
-    margin-top: 150px;
+    padding-top: 150px;
     display: flex;
     flex-direction: column;
-    width: 100%;
     align-items: center;
 }
 
@@ -135,11 +133,11 @@ nav ul li a:hover{
     color: white;
 }
 
-.gallery-container .box figure{
+.gallery-container .box .fig{
     margin-bottom: 250px;
 }
 
-.gallery-container .box figure figcaption{
+.gallery-container .box .fig figcaption{
     text-align: center;
     color: transparent;
     transition: 0.7s;
@@ -150,16 +148,24 @@ nav ul li a:hover{
 
 
 .gallery-container .videos{
-    margin-top: 100px;
-    margin-bottom: 500px;
+    margin-bottom: 300px;
     right: 0;
     bottom: 0;
+    
 }
 
 .gallery-container .videos video{
-    margin-top: 200px;
-    margin-bottom: 200px;
-    height: 1107px;
+    margin: 0px 2.5vw 400px 2.5vw;
+    width: 95vw;
+}
+
+@media only screen and (max-width: 900px){
+    .gallery-container .box{
+        flex-direction: column;
+    }
+    .gallery-container .box .fig{
+        width: 100%;
+    }
 }
 
 /* code page */
