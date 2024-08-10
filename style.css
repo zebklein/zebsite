@@ -17,6 +17,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .logo{
@@ -213,45 +214,6 @@ nav ul li a:hover{
 
 /* #endregion */
 
-/* #region philosophy page */
-
-.philosophy {
-    background-image: linear-gradient(rgb(232, 232, 232), rgb(132, 158, 215))
-}
-
-#black-nav a{
-    color: black;
-}
-
-.text-box {
-    margin: 100px auto 200px;
-    width: 40%;
-}
-
-.text-box h1{
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    margin: 40px;
-}
-
-.text-box p{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: larger;
-    line-height: 2;
-}
-
-.text-box ul li{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: larger;
-    margin: 5px 100px;
-}
-
-.text-box #references{
-    text-align: center;
-}
-
-/* #endregion */
-
 /* #region philosophy 2 page */
 
 .philosophy{
@@ -259,6 +221,12 @@ nav ul li a:hover{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+}
+
+@media only screen and (max-width: 586px){
+    .philosophy{
+        background-size: auto 100%;
+    }
 }
 
 .school-of-athens{
@@ -271,22 +239,48 @@ nav ul li a:hover{
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
+    z-index: -2;
 }
 
-.school-of-athens .row{
-    display: flex;
+#titles{
+    position: absolute;
+    width: 100%;
+}
+
+.school-of-athens .title{
+    flex: 50%;
     text-align: center;
 }
 
-.school-of-athens .row .column{
-    align-items: center;
-    flex: 50%;
+.school-of-athens .title img{
+    padding-top: 45vh;
+    width: 300px;
 }
 
-.school-of-athens .row .column img{
-    padding: 50vh 0;
-    width: 40%;
+
+.school-of-athens .row{
+    display: flex;
 }
+
+.school-of-athens .row .column{
+    flex: 50%;
+    height: 100vh;
+    background-color: rgb(215, 215, 215);
+    transition: 0.7s;
+    opacity: 50%;
+}
+
+#left-column{
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,.4)), to(rgba(0,0,0,0)));
+}
+
+#right-column{
+    -webkit-mask-image: -webkit-gradient(linear, right top, left top, from(rgba(0,0,0,.4)), to(rgba(0,0,0,0)));
+}
+
+.school-of-athens .row .column:hover{
+    opacity: 100%;
+}
+
 
 /* #endregion */
