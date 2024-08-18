@@ -6,7 +6,7 @@
 
 }
 
-/* nav bar */
+/* #region nav bar */
 
 nav{
     width: 100%;
@@ -17,6 +17,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .logo{
@@ -42,7 +43,9 @@ nav ul li a:hover{
     color: rgb(255, 255, 255);
 }
 
-/* hero page */
+/* #endregion */
+
+/* #region hero page */
 
 .hero{
     width: 100%;
@@ -103,7 +106,9 @@ nav ul li a:hover{
     }
 }
 
-/* gallery page */
+/* #endregion */
+
+/* #region gallery page */
 
 .gallery {
     background-color: black;
@@ -168,7 +173,9 @@ nav ul li a:hover{
     }
 }
 
-/* code page */
+/* #endregion */
+
+/* #region code page */
 
 .code {
     background-color: black;
@@ -211,9 +218,87 @@ nav ul li a:hover{
     text-align: left;
 }
 
-/* philosophy page */
-.philosophy {
+/* #endregion */
+
+/* #region philosophy page */
+
+.philosophy{
+    background-image: url("media/school_of_athens.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+@media only screen and (max-width: 586px){
+    .philosophy{
+        background-size: auto 100%;
+    }
+}
+
+.school-of-athens{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.school-of-athens #background{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+#titles{
+    position: absolute;
+    width: 100%;
+}
+
+.school-of-athens .title{
+    flex: 50%;
+    text-align: center;
+}
+
+.school-of-athens .title img{
+    padding-top: 45vh;
+    width: 300px;
+}
+
+
+.school-of-athens .row{
+    display: flex;
+}
+
+.school-of-athens .row .column{
+    flex: 50%;
+    height: 100vh;
+    background-color: rgb(215, 215, 215);
+    transition: 0.7s;
+    opacity: 50%;
+}
+
+#left-column{
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,.6)), to(rgba(0,0,0,0)));
+}
+
+#right-column{
+    -webkit-mask-image: -webkit-gradient(linear, right top, left top, from(rgba(0,0,0,.6)), to(rgba(0,0,0,0)));
+}
+
+.school-of-athens .row .column:hover{
+    opacity: 100%;
+}
+
+/* #endregion */
+
+
+/* #region physis page */
+
+.ethos {
     background-image: linear-gradient(rgb(232, 232, 232), rgb(132, 158, 215))
+}
+
+.physis {
+    background-image: linear-gradient(rgb(232, 232, 232), rgb(207, 97, 97))
 }
 
 #black-nav a{
@@ -246,3 +331,5 @@ nav ul li a:hover{
 .text-box #references{
     text-align: center;
 }
+
+/* #endregion */
