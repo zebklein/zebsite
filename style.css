@@ -214,7 +214,7 @@ nav ul li a:hover{
 
 /* #endregion */
 
-/* #region philosophy 2 page */
+/* #region philosophy page */
 
 .philosophy{
     background-image: url("media/school_of_athens.jpg");
@@ -271,16 +271,59 @@ nav ul li a:hover{
 }
 
 #left-column{
-    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,.4)), to(rgba(0,0,0,0)));
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,.6)), to(rgba(0,0,0,0)));
 }
 
 #right-column{
-    -webkit-mask-image: -webkit-gradient(linear, right top, left top, from(rgba(0,0,0,.4)), to(rgba(0,0,0,0)));
+    -webkit-mask-image: -webkit-gradient(linear, right top, left top, from(rgba(0,0,0,.6)), to(rgba(0,0,0,0)));
 }
 
 .school-of-athens .row .column:hover{
     opacity: 100%;
 }
 
+/* #endregion */
+
+
+/* #region physis page */
+
+.ethos {
+    background-image: linear-gradient(rgb(232, 232, 232), rgb(132, 158, 215))
+}
+
+.physis {
+    background-image: linear-gradient(rgb(232, 232, 232), rgb(207, 97, 97))
+}
+
+#black-nav a{
+    color: black;
+}
+
+.text-box {
+    margin: 100px auto 200px;
+    width: 40%;
+}
+
+.text-box h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 40px;
+}
+
+.text-box p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    line-height: 2;
+}
+
+.text-box ul li{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    margin: 5px 100px;
+}
+
+.text-box #references{
+    text-align: center;
+}
 
 /* #endregion */
