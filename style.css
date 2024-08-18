@@ -160,8 +160,8 @@ nav ul li a:hover{
 }
 
 .gallery-container .videos video{
-    margin: 0px 2.5vw 400px 2.5vw;
-    width: 95vw;
+    margin: 0px 4vw 400px 4vw;
+    width: 90vw;
 }
 
 @media only screen and (max-width: 900px){
@@ -289,7 +289,6 @@ nav ul li a:hover{
 }
 
 /* #endregion */
-
 
 /* #region physis page */
 
