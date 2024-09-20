@@ -151,6 +151,17 @@ nav ul li a:hover{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.gallery-container #films_title{
+    margin-bottom: 100px;
+}
+
+.gallery-container #films_title a{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+}
 
 .gallery-container .videos{
     margin-bottom: 300px;
@@ -206,15 +217,16 @@ nav ul li a:hover{
 }
 
 .code-column p{
-    color: green;
+    color: rgb(28, 207, 28);
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
 }
 
 #code-intro{
-    color: green;
+    color: rgb(95, 218, 95);
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
+    font-weight: 600;
     text-align: left;
 }
 
@@ -290,7 +302,7 @@ nav ul li a:hover{
 
 /* #endregion */
 
-/* #region physis page */
+/* #region essay page(s) */
 
 .ethos {
     background-image: linear-gradient(rgb(232, 232, 232), rgb(132, 158, 215))
@@ -313,6 +325,7 @@ nav ul li a:hover{
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     margin: 40px;
+    font-weight: 400;
 }
 
 .text-box p{

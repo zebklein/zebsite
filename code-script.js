@@ -166,7 +166,7 @@ int main() { <br> \
 var intro = "The following are programs from a small collection of useful string manipulation \
 tools called the word-library. Anagrams (being printed on the left) is designed to generate \
 English-style \"name-like\" caesar ciphers based on a given string. Generator, shown on the right, \
-generates possible passwords constructed from a set of input strings using simple substitution strategies. \
+produces passwords constructed from a set of input strings using simple substitution strategies. \
 The programs below, along with the source code for this website, can be found at github.com/zebklein"
 // #endregion
 
