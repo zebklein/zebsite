@@ -328,7 +328,7 @@ nav ul li a:hover{
     font-weight: 400;
 }
 
-.text-box p{
+.text-box p, .text-box p b {
     font-family: 'Times New Roman', Times, serif;
     font-size: larger;
     line-height: 2;
