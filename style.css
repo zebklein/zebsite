@@ -123,7 +123,7 @@ nav ul li a:hover{
 }
 
 .gallery-container .box{
-    padding-top: 150px;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,7 +155,11 @@ nav ul li a:hover{
     margin-bottom: 100px;
 }
 
-.gallery-container #films_title a{
+.gallery-container #photos_title{
+    padding-top: 60px;
+}
+
+.gallery-container #films_title a, .gallery-container #photos_title a{
     font-family: 'Courier New', Courier, monospace;
     font-size: x-large;
     font-weight: 400;
