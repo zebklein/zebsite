@@ -400,5 +400,96 @@ body.triage .pdf-page {
   padding-top: 80px;
 }
 
+/* #endregion */
+
+/* #region architecture page */
+
+:root{
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --font-display: "Space Grotesk", var(--font-sans);
+}
+
+/* Body typography */
+body, html {
+  font-family: var(--font-sans);
+}
+
+body.garage {
+  background: #000; /* on-brand dark */
+  color: #fff;
+}
+
+.garage-page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 80px 16px 40px;
+}
+
+.garage-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centers to the grid width */
+  text-align: center;
+  margin: 0 auto 20px;
+}
+
+.garage-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: clamp(2.4rem, 1.4rem + 3vw, 4.2rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.title-accent {
+  width: 120px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4fd1c5, #60a5fa, #9effdf);
+  opacity: 0.9;
+}
+
+/* Shiny gradient text when supported */
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .garage-title {
+    background: linear-gradient(90deg, #ffffff, #99c2ff, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* 3 rows × 2 columns */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.image-grid .grid-item {
+  display: block;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #111;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+}
+
+/* Optional: make it nicer on phones (remove if you want strict 2×3 everywhere) */
+@media (max-width: 800px) {
+  .image-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .image-grid { grid-template-columns: 1fr; }
+}
+
 
 /* #endregion */
