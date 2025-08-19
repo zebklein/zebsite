@@ -349,3 +349,56 @@ nav ul li a:hover{
 }
 
 /* #endregion */
+
+/* #region triage paper */
+
+body.triage {
+  /* inherit your site background; tweak if you use page-specific backgrounds */
+  background: #000000;
+  color: #ffffff;
+}
+
+.pdf-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.pdf-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.pdf-header h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.pdf-download {
+  font-size: 0.95rem;
+  text-decoration: underline;
+}
+
+.pdf-embed {
+  width: 100%;
+  height: calc(100vh - 180px); /* fills the viewport under the nav/header */
+  border: none;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.08);
+}
+
+.pdf-fallback {
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+
+/* If your <nav> is fixed, add top padding so content isn't hidden */
+body.triage .pdf-page {
+  /* adjust if your nav height differs */
+  padding-top: 80px;
+}
+
+
+/* #endregion */
