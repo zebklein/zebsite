@@ -7,21 +7,25 @@
   </head>
   <body class="triage">
     <nav>
-      <div class="logo">
-        <a href="index.html">
-          <img src="media/logo-white.png" class="logo" alt="Site logo">
+      <div class="brand">
+        <a href="index.html" aria-label="Home">
+          <img src="media/logo-white.png" alt="Zeb logo" class="logo">
         </a>
       </div>
-      <ul id="white-nav">
+
+      <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+      <label for="nav-toggle" class="burger" aria-hidden="true"><span></span></label>
+
+      <ul class="menu">
         <li><a href="gallery.html">GALLERY</a></li>
         <li><a href="code.html">CODE</a></li>
         <li><a href="architecture.html">ARCHITECTURE</a></li>
         <li class="has-dropdown">
-            <a href="philosophy.html" class="nav-parent">PHILOSOPHY</a>
-            <ul class="dropdown" role="menu" aria-label="Philosophy submenu">
-                <li><a href="philosophy.html" role="menuitem">General</a></li>
-                <li><a href="triage.html" role="menuitem">A.I. in Triage</a></li>
-            </ul>
+          <a href="philosophy.html" class="nav-parent" aria-haspopup="true" aria-expanded="false">PHILOSOPHY</a>
+          <ul class="dropdown" role="menu" aria-label="Philosophy submenu">
+            <li><a href="philosophy.html" role="menuitem">General</a></li>
+            <li><a href="triage.html" role="menuitem">A.I. in Triage</a></li>
+          </ul>
         </li>
       </ul>
     </nav>
