@@ -101,7 +101,7 @@ nav{
   white-space:nowrap;
 }
 .dropdown a:hover{
-  background:#375f9c;
+  background:#4965ff41;
   color:#ffffff;
 }
 
@@ -171,6 +171,10 @@ nav{
     background:transparent;
   }
   .menu a:hover{ background:rgba(255,255,255,.08); color:#fff; }
+  #dark-nav a{
+    color:rgb(255, 255, 255);
+  }
+  #dark-nav a:hover{ color:#000000; }
 
   #nav-toggle:checked + label.burger::before{
     transform:translateY(11px) rotate(45deg);
