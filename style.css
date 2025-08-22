@@ -100,10 +100,7 @@ nav{
   text-shadow:none;
   white-space:nowrap;
 }
-.dropdown a:hover{
-  background:#4965ff41;
-  color:#ffffff;
-}
+.dropdown a:hover{ color:#ffffff; }
 
 /* ========== Desktop Nav ========== */
 @media (min-width: 821px){
