@@ -464,39 +464,6 @@ html, body {
 
 /* #region essay page(s) */
 
-.ethos { background-image: linear-gradient(rgb(232, 232, 232), rgb(132, 158, 215)); }
-.physis { background-image: linear-gradient(rgb(232, 232, 232), rgb(207, 97, 97)); }
-
-.text-box {
-    margin: 100px auto 200px;
-    width: 40%;
-}
-
-.text-box h1{
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    margin: 40px;
-    font-weight: 400;
-}
-
-.text-box p, .text-box p b {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: larger;
-    line-height: 2;
-}
-
-.text-box ul li{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: larger;
-    margin: 5px 100px;
-}
-
-.text-box #references{ text-align: center; }
-
-/* #endregion */
-
-/* #region triage paper */
-
 body.triage {
   background: #000000;
   color: #ffffff;
