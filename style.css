@@ -604,4 +604,11 @@ body.garage {
   .image-grid { grid-template-columns: 1fr; }
 }
 
+/* Compact image sizing */
+.gallery-container .box .fig img.compact-image {
+  max-width: 85% !important;
+  margin: auto !important;
+  display: block !important;
+}
+
 /* #endregion */
