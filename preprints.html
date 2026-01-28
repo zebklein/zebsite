@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>A.I. in Triage</title>
+    <title>Preprints</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -22,16 +22,27 @@
         <li><a href="code.html">CODE</a></li>
         <li><a href="architecture.html">ARCHITECTURE</a></li>
         <li class="has-dropdown">
-          <a class="nav-parent" aria-haspopup="true" aria-expanded="false">PHILOSOPHY</a>
-          <ul class="dropdown" role="menu" aria-label="Philosophy submenu">
-            <li><a href="philosophy.html" role="menuitem">THEORY</a></li>
-            <li><a href="triage.html" role="menuitem">A.I. IN TRIAGE</a></li>
+          <a class="nav-parent" aria-haspopup="true" aria-expanded="false">WRITING</a>
+          <ul class="dropdown" role="menu" aria-label="Writing submenu">
+            <li><a href="philosophy.html" role="menuitem">PHILOSOPHICAL THEORY</a></li>
+            <li><a href="preprints.html" role="menuitem">PREPRINTS</a></li>
           </ul>
         </li>
       </ul>
     </nav>
 
     <main class="pdf-page">
+      <header class="pdf-header">
+        <a class="pdf-download" href="media/essays/Quantum_Threat_on_Bitcoin.pdf" target="_blank"></a>
+      </header>
+
+      <!-- Inline PDF viewer -->
+      <embed
+        src="media/essays/Quantum_Threat_on_Bitcoin.pdf"
+        type="application/pdf"
+        class="pdf-embed"
+      />
+
       <header class="pdf-header">
         <a class="pdf-download" href="media/essays/AI_in_Triage.pdf" target="_blank"></a>
       </header>
@@ -42,11 +53,6 @@
         type="application/pdf"
         class="pdf-embed"
       />
-
-      <!-- Fallback if embed isn't supported -->
-      <p class="pdf-fallback">
-        <a href="media/essays/AI_in_Triage.pdf" target="_blank" rel="noopener">Click here to view/download the PDF.</a>
-      </p>
     </main>
   </body>
 </html>
