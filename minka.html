@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Preprints</title>
+    <title>Minka Design</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+
   </head>
-  <body class="triage">
+  <body class="minka">
     <nav>
       <div class="brand">
         <a href="index.html" aria-label="Home">
-          <img src="media/logo-white.png" alt="Zeb logo" class="logo">
+          <img src="media/logo-black.png" alt="Zeb logo" class="logo">
         </a>
       </div>
 
@@ -37,28 +41,18 @@
       </ul>
     </nav>
 
-    <main class="pdf-page">
-      <header class="pdf-header">
-        <a class="pdf-download" href="media/essays/Quantum_Threat_on_Bitcoin.pdf" target="_blank"></a>
+    <main class="minka-page">
+      <header class="minka-header">
+        <h1 class="minka-title">Minka Design</h1>
+        <p class="minka-description">A minimalist design approach emphasizing natural materials and functional elegance.</p>
+        <div class="title-accent" aria-hidden="true"></div>
       </header>
 
-      <!-- Inline PDF viewer -->
-      <embed
-        src="media/essays/Quantum_Threat_on_Bitcoin.pdf"
-        type="application/pdf"
-        class="pdf-embed"
-      />
-
-      <header class="pdf-header">
-        <a class="pdf-download" href="media/essays/AI_in_Triage.pdf" target="_blank"></a>
-      </header>
-
-      <!-- Inline PDF viewer -->
-      <embed
-        src="media/essays/AI_in_Triage.pdf"
-        type="application/pdf"
-        class="pdf-embed"
-      />
+      <section class="image-grid">
+        <a class="grid-item" href="media/models/minka_floor_plan.png" target="_blank" rel="noopener">
+          <img src="media/models/minka_floor_plan.png" alt="Minka floor plan" loading="lazy" decoding="async">
+        </a>
+      </section>
     </main>
   </body>
 </html>

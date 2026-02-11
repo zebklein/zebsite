@@ -7,6 +7,7 @@ A personal portfolio website showcasing photography, code projects, philosophy, 
 
 - **Gallery:** Browse a curated selection of photographs and short films.
 - **Code:** Explore C++ code samples and password generator logic, displayed with a dynamic typing effect.
+- **Architecture:** Two subsections—Minka Design and Garage Concept—showcasing architectural projects.
 - **Philosophy & Essays:** Read some of my more cultured work.
 
 ## Dynamic JavaScript Features
