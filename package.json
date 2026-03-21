@@ -1,0 +1,20 @@
+{
+  "name": "zebsite",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "postcss \"src/css/*.css\" --dir _site/css",
+    "build:11ty": "eleventy",
+    "build": "npm run build:css && npm run build:11ty",
+    "start": "concurrently \"postcss 'src/css/*.css' --dir _site/css --watch\" \"eleventy --serve\"",
+    "clean": "rimraf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "rimraf": "^6.0.1"
+  }
+}

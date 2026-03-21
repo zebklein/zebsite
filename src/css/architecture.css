@@ -1,0 +1,153 @@
+body.garage {
+  background: #000;
+  color: #fff;
+}
+
+.garage-page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 80px 16px 40px;
+}
+
+.garage-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto 20px;
+}
+
+.garage-description {
+  font-family: 'Inter', 'Space Grotesk', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #d1eaff;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.garage-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: clamp(2.4rem, 1.4rem + 3vw, 4.2rem);
+  line-height: 1.05;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.title-accent {
+  width: 120px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4fd1c5, #60a5fa, #9effdf);
+  opacity: 0.9;
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .garage-title {
+    background: linear-gradient(90deg, #ffffff, #99c2ff, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* 3 rows × 2 columns */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.image-grid .grid-item { display: block; }
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #111;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 800px) {
+  .image-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .image-grid { grid-template-columns: 1fr; }
+}
+
+/* #region minka page */
+
+body.minka {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.minka-page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 80px 16px 40px;
+}
+
+.minka-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto 20px;
+}
+
+.minka-description {
+  font-family: 'Inter', 'Space Grotesk', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #4a4a4a;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.minka-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: clamp(2.4rem, 1.4rem + 3vw, 4.2rem);
+  line-height: 1.05;
+  margin: 0;
+  padding-top: 10px;
+  color: #1a1a1a;
+}
+
+.minka-page .title-accent {
+  background: linear-gradient(90deg, #333333, #666666, #333333);
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .minka-title {
+    background: linear-gradient(90deg, #1a1a1a, #4a4a4a, #1a1a1a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.minka-page .image-grid img {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.minka-page .image-grid {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.minka-page .grid-item {
+  display: flex;
+  justify-content: center;
+}
+
+/* #endregion */

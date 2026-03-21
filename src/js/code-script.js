@@ -1,4 +1,4 @@
-// This script prints the three strings below to the 'Code' page using the DOMWriter function. 
+// This script prints the three strings below to the 'Code' page using the DOMWriter function.
 
 //#region anagrams
 var anagrams = "\
@@ -300,47 +300,42 @@ void appendPunctuation(vector<string>& v) { <br> \
 // #endregion
 
 // #region DOMWriter
-// The following function writes text to an element in the related HTML DOM with simulated delay typing
+// Writes text to a DOM element with simulated typing delay.
+// Uses safe DOM APIs (createTextNode, createElement) instead of innerHTML.
 function DOMWriter(DOM_element, stringToPrint) {
-    var linebreak = document.createElement("br");
-    // using a Promise to simulate a delay
     const delay = ms => new Promise(res => setTimeout(res, ms));
     const print_code = async () => {
-        var word = "";
-        // loop through the input string, reading each word to check for the break symbol '<br>' or any nessesary spacing
-        for (var i = 0; i < stringToPrint.length; ++i) {
-            while (stringToPrint[i] != " " && i < stringToPrint.length) {
+        const el = document.getElementById(DOM_element);
+        let word = "";
+        for (let i = 0; i < stringToPrint.length; ++i) {
+            while (stringToPrint[i] !== " " && i < stringToPrint.length) {
                 word += stringToPrint[i++];
             }
-            if (word == "<br>") {
-                document.getElementById(DOM_element).appendChild(linebreak);
+            if (word === "<br>") {
+                el.appendChild(document.createElement("br"));
             } else {
-                for (j in word) {
-                    document.getElementById(DOM_element).innerHTML += word[j];
+                for (let j = 0; j < word.length; j++) {
+                    el.appendChild(document.createTextNode(word[j]));
                     let d = 60;
-                    // use a step function to caluclate delay between a print
-                    // f(x) = 60 if 0<x<15, else use the inverse equation below, which moves asymptotically to x = 10
                     if (i > 15) {
-                        d = Math.trunc((500/(i-5))+10);
+                        d = Math.trunc((500 / (i - 5)) + 10);
                     }
                     await delay(d);
                 }
-                if (i+1 < stringToPrint.length && stringToPrint[i+1] == " ") {
-                    // if there are two spaces in a row, assume a tab
-                    document.getElementById(DOM_element).innerHTML += "&ensp;";
+                if (i + 1 < stringToPrint.length && stringToPrint[i + 1] === " ") {
+                    el.appendChild(document.createTextNode('\u2002')); // en space
                 } else {
-                    document.getElementById(DOM_element).innerHTML += " ";
+                    el.appendChild(document.createTextNode(' '));
                 }
             }
             word = "";
         }
-    }
+    };
     print_code();
 }
 // #endregion
 
 // #region main
-// These functions are run concurently by nature of JavaScript's call stack
 DOMWriter("code-intro", intro);
 DOMWriter("code-column-left", anagrams);
 DOMWriter("code-column-right", generator);
