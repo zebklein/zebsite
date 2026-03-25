@@ -6,7 +6,7 @@
     "build:css": "postcss \"src/css/*.css\" --dir _site/css",
     "build:11ty": "eleventy",
     "build": "npm run build:css && npm run build:11ty",
-    "start": "concurrently \"postcss 'src/css/*.css' --dir _site/css --watch\" \"eleventy --serve\"",
+    "start": "concurrently \"postcss src/css/*.css --dir _site/css --watch\" \"eleventy --serve\"",
     "clean": "rimraf _site"
   },
   "devDependencies": {
