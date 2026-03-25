@@ -101,7 +101,8 @@ nav {
   transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
   z-index: 1000;
 }
-.has-dropdown:hover .dropdown {
+.has-dropdown:hover .dropdown,
+.has-dropdown.open .dropdown {
   opacity: 1; visibility: visible; pointer-events: auto;
 }
 .dropdown a {
@@ -127,11 +128,24 @@ nav {
   }
 
   .has-dropdown:hover .dropdown,
-  .has-dropdown:focus-within .dropdown {
+  .has-dropdown:focus-within .dropdown,
+  .has-dropdown.open .dropdown {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     transform: translateX(-50%);
+  }
+
+  /* right-align dropdowns that would otherwise overflow the viewport */
+  .drop-right .dropdown {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+  .drop-right:hover .dropdown,
+  .drop-right:focus-within .dropdown,
+  .drop-right.open .dropdown {
+    transform: none;
   }
 
   .has-dropdown::after {

@@ -24,7 +24,7 @@
         <li><a href="garage.html" role="menuitem">GARAGE CONCEPT</a></li>
       </ul>
     </li>
-    <li class="has-dropdown">
+    <li class="has-dropdown drop-right">
       <a class="nav-parent" aria-haspopup="true" aria-expanded="false">WRITING</a>
       <ul class="dropdown" role="menu" aria-label="Writing submenu">
         <li><a href="philosophy.html" role="menuitem">PHILOSOPHICAL THEORY</a></li>
@@ -33,3 +33,37 @@
     </li>
   </ul>
 </nav>
+<script>
+  (function () {
+    const parents = document.querySelectorAll('.nav-parent');
+
+    parents.forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        const li = el.closest('.has-dropdown');
+        const isOpen = li.classList.contains('open');
+
+        // close all
+        document.querySelectorAll('.has-dropdown.open').forEach(function (open) {
+          open.classList.remove('open');
+          open.querySelector('.nav-parent').setAttribute('aria-expanded', 'false');
+        });
+
+        // toggle this one
+        if (!isOpen) {
+          li.classList.add('open');
+          el.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // close on outside click/tap
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.has-dropdown')) {
+        document.querySelectorAll('.has-dropdown.open').forEach(function (open) {
+          open.classList.remove('open');
+          open.querySelector('.nav-parent').setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  })();
+</script>
