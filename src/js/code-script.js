@@ -299,6 +299,43 @@ void appendPunctuation(vector<string>& v) { <br> \
 ";
 // #endregion
 
+// #region randomReveal
+// Reveals all characters of text in random order over durationMs milliseconds.
+// Each character fades in via CSS opacity transition.
+// Returns a Promise that resolves once all characters are fully visible.
+function randomReveal(elementId, text, durationMs) {
+    return new Promise(function(resolve) {
+        const el = document.getElementById(elementId);
+
+        const spans = text.split('').map(function(ch) {
+            const span = document.createElement('span');
+            span.textContent = ch;
+            span.style.opacity = '0';
+            span.style.transition = 'opacity 0.25s ease';
+            el.appendChild(span);
+            return span;
+        });
+
+        // Fisher-Yates shuffle of indices
+        const indices = spans.map(function(_, i) { return i; });
+        for (let i = indices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const tmp = indices[i]; indices[i] = indices[j]; indices[j] = tmp;
+        }
+
+        const interval = (durationMs - 250) / spans.length;
+        indices.forEach(function(charIndex, order) {
+            setTimeout(function() {
+                spans[charIndex].style.opacity = '1';
+            }, order * interval);
+        });
+
+        // resolve after all fades complete
+        setTimeout(resolve, durationMs + 250);
+    });
+}
+// #endregion
+
 // #region DOMWriter
 // Writes text to a DOM element with simulated typing delay.
 // Uses safe DOM APIs (createTextNode, createElement) instead of innerHTML.
@@ -336,7 +373,10 @@ function DOMWriter(DOM_element, stringToPrint) {
 // #endregion
 
 // #region main
-DOMWriter("code-intro", intro);
-DOMWriter("code-column-left", anagrams);
-DOMWriter("code-column-right", generator);
+// 1. Reveal intro text randomly over 5 seconds.
+// 2. Once complete, begin typing both code columns simultaneously.
+randomReveal("code-intro", intro, 5000).then(function() {
+    DOMWriter("code-column-left", anagrams);
+    DOMWriter("code-column-right", generator);
+});
 // #endregion

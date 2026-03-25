@@ -37,6 +37,13 @@
   white-space: pre-wrap;
 }
 
+#code-intro span {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
 #code-intro {
   color: rgb(95, 218, 95);
   font-family: 'Courier New', Courier, monospace;
