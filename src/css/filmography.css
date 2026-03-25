@@ -65,8 +65,7 @@
   color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.03em;
   text-align: center;
-  max-width: 130px;
-  word-break: break-all;
+  white-space: nowrap;
   line-height: 1.5;
 }
 
@@ -136,6 +135,5 @@
 
   .file-label {
     font-size: 11px;
-    max-width: 110px;
   }
 }
