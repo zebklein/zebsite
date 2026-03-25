@@ -9,7 +9,13 @@
   <label for="nav-toggle" class="burger" aria-hidden="true"><span></span></label>
 
   <ul class="menu"{% if navDark %} id="dark-nav"{% endif %}>
-    <li><a href="gallery.html">GALLERY</a></li>
+    <li class="has-dropdown">
+      <a class="nav-parent" aria-haspopup="true" aria-expanded="false">GALLERY</a>
+      <ul class="dropdown" role="menu" aria-label="Gallery submenu">
+        <li><a href="photography.html" role="menuitem">PHOTOGRAPHY</a></li>
+        <li><a href="filmography.html" role="menuitem">FILMOGRAPHY</a></li>
+      </ul>
+    </li>
     <li><a href="code.html">CODE</a></li>
     <li class="has-dropdown">
       <a class="nav-parent" aria-haspopup="true" aria-expanded="false">ARCHITECTURE</a>
