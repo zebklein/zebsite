@@ -1,2 +1,4 @@
 media/videos/waterfall.mp4
-.github/
+.claude
+node_modules/
+_site/

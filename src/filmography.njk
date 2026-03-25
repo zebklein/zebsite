@@ -1,0 +1,87 @@
+---
+layout: layouts/base.njk
+title: "Filmography"
+pageClass: "filmography"
+extraCss: ["filmography"]
+logoSrc: "media/logo-white.png"
+permalink: "filmography.html"
+---
+
+<div class="film-desktop">
+  <div class="film-icons">
+
+    <button class="film-icon" data-src="media/videos/world-browser-pt1.mp4">
+      <div class="file-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <mask id="reel-mask-1">
+              <circle cx="50" cy="50" r="43" fill="white"/>
+              <path d="M50,50 L62.36,12.04 A40,40 0 0,1 89.12,58.32 Z" fill="black"/>
+              <path d="M50,50 L76.76,79.72 A40,40 0 0,1 23.24,79.72 Z" fill="black"/>
+              <path d="M50,50 L10.88,58.32 A40,40 0 0,1 37.64,12.04 Z" fill="black"/>
+              <circle cx="50" cy="50" r="13" fill="black"/>
+            </mask>
+          </defs>
+          <circle cx="50" cy="50" r="43" fill="currentColor" opacity="0.6" mask="url(#reel-mask-1)"/>
+          <circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="13" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="50" cy="50" r="4" fill="currentColor"/>
+        </svg>
+      </div>
+      <span class="file-label">world-browser-pt1.mp4</span>
+    </button>
+
+    <button class="film-icon" data-src="media/videos/world-browser-pt2.mp4">
+      <div class="file-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <mask id="reel-mask-2">
+              <circle cx="50" cy="50" r="43" fill="white"/>
+              <path d="M50,50 L62.36,12.04 A40,40 0 0,1 89.12,58.32 Z" fill="black"/>
+              <path d="M50,50 L76.76,79.72 A40,40 0 0,1 23.24,79.72 Z" fill="black"/>
+              <path d="M50,50 L10.88,58.32 A40,40 0 0,1 37.64,12.04 Z" fill="black"/>
+              <circle cx="50" cy="50" r="13" fill="black"/>
+            </mask>
+          </defs>
+          <circle cx="50" cy="50" r="43" fill="currentColor" opacity="0.6" mask="url(#reel-mask-2)"/>
+          <circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="13" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="50" cy="50" r="4" fill="currentColor"/>
+        </svg>
+      </div>
+      <span class="file-label">world-browser-pt2.mp4</span>
+    </button>
+
+    <button class="film-icon" data-src="media/videos/telescope.mp4">
+      <div class="file-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <mask id="reel-mask-3">
+              <circle cx="50" cy="50" r="43" fill="white"/>
+              <path d="M50,50 L62.36,12.04 A40,40 0 0,1 89.12,58.32 Z" fill="black"/>
+              <path d="M50,50 L76.76,79.72 A40,40 0 0,1 23.24,79.72 Z" fill="black"/>
+              <path d="M50,50 L10.88,58.32 A40,40 0 0,1 37.64,12.04 Z" fill="black"/>
+              <circle cx="50" cy="50" r="13" fill="black"/>
+            </mask>
+          </defs>
+          <circle cx="50" cy="50" r="43" fill="currentColor" opacity="0.6" mask="url(#reel-mask-3)"/>
+          <circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="13" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="50" cy="50" r="4" fill="currentColor"/>
+        </svg>
+      </div>
+      <span class="file-label">telescope.mp4</span>
+    </button>
+
+  </div>
+</div>
+
+<div class="film-modal" id="film-modal" aria-modal="true" role="dialog" hidden>
+  <div class="film-modal-backdrop"></div>
+  <div class="film-modal-inner">
+    <button class="film-modal-close" aria-label="Close">&#x2715;</button>
+    <video id="film-player" controls></video>
+  </div>
+</div>
+
+<script src="js/filmography.js"></script>

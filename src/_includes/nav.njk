@@ -1,0 +1,69 @@
+<nav>
+  <div class="brand">
+    <a href="index.html" aria-label="Home">
+      <img src="{{ logoSrc | default('media/logo-white.png') }}" alt="Zeb logo" class="logo">
+    </a>
+  </div>
+
+  <input type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+  <label for="nav-toggle" class="burger" aria-hidden="true"><span></span></label>
+
+  <ul class="menu"{% if navDark %} id="dark-nav"{% endif %}>
+    <li class="has-dropdown">
+      <a class="nav-parent" aria-haspopup="true" aria-expanded="false">GALLERY</a>
+      <ul class="dropdown" role="menu" aria-label="Gallery submenu">
+        <li><a href="photography.html" role="menuitem">PHOTOGRAPHY</a></li>
+        <li><a href="filmography.html" role="menuitem">FILMOGRAPHY</a></li>
+      </ul>
+    </li>
+    <li><a href="code.html">CODE</a></li>
+    <li class="has-dropdown">
+      <a class="nav-parent" aria-haspopup="true" aria-expanded="false">ARCHITECTURE</a>
+      <ul class="dropdown" role="menu" aria-label="Architecture submenu">
+        <li><a href="minka.html" role="menuitem">MINKA DESIGN</a></li>
+        <li><a href="garage.html" role="menuitem">GARAGE CONCEPT</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown drop-right">
+      <a class="nav-parent" aria-haspopup="true" aria-expanded="false">WRITING</a>
+      <ul class="dropdown" role="menu" aria-label="Writing submenu">
+        <li><a href="philosophy.html" role="menuitem">PHILOSOPHICAL THEORY</a></li>
+        <li><a href="preprints.html" role="menuitem">PREPRINTS</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<script>
+  (function () {
+    const parents = document.querySelectorAll('.nav-parent');
+
+    parents.forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        const li = el.closest('.has-dropdown');
+        const isOpen = li.classList.contains('open');
+
+        // close all
+        document.querySelectorAll('.has-dropdown.open').forEach(function (open) {
+          open.classList.remove('open');
+          open.querySelector('.nav-parent').setAttribute('aria-expanded', 'false');
+        });
+
+        // toggle this one
+        if (!isOpen) {
+          li.classList.add('open');
+          el.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // close on outside click/tap
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.has-dropdown')) {
+        document.querySelectorAll('.has-dropdown.open').forEach(function (open) {
+          open.classList.remove('open');
+          open.querySelector('.nav-parent').setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  })();
+</script>

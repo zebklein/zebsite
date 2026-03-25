@@ -20,10 +20,6 @@ A personal portfolio website showcasing photography, code projects, philosophy, 
 - **DOM Manipulation:**
 	- Text is written directly to specific elements in the DOM, including line breaks and spacing, for a realistic code editor feel.
 
-## Hosting
-
-This site is designed for static hosting (e.g., GitHub Pages).
-
 ---
 
 © David Zebedee Kleinsorge

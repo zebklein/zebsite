@@ -1,0 +1,141 @@
+.filmography {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+}
+
+/* ── Desktop canvas ── */
+.film-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 100px 24px 60px;
+}
+
+.film-icons {
+  display: flex;
+  gap: clamp(40px, 8vw, 100px);
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Individual icon ── */
+.film-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.film-icon:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Film reel SVG icon ── */
+.file-icon {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.2s ease;
+}
+
+.file-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.film-icon:hover .file-icon {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── Filename label ── */
+.file-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.03em;
+  text-align: center;
+  max-width: 130px;
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.film-icon:hover .file-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── Modal ── */
+.film-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.film-modal[hidden] { display: none; }
+
+.film-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.film-modal-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 92vw);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+#film-player {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  display: block;
+}
+
+.film-modal-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.15s ease;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.film-modal-close:hover { color: #ffffff; }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .film-icons {
+    gap: 32px;
+  }
+
+  .file-icon {
+    width: 72px;
+    height: 72px;
+  }
+
+  .file-label {
+    font-size: 11px;
+    max-width: 110px;
+  }
+}

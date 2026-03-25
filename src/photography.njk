@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+title: "Photography"
+pageClass: "gallery"
+extraCss: ["gallery", "photography"]
+logoSrc: "media/logo-white.png"
+permalink: "photography.html"
+---
+
+<div class="slideshow">
+  <button class="slide-arrow prev" aria-label="Previous photo">&#8592;</button>
+
+  <div class="slide-stage">
+    <div class="slide active">
+      <img src="media/pictures/pinball.JPG" alt="Pinball Pete's - Ann Arbor, MI">
+      <figcaption>PINBALL PETE'S — ANN ARBOR, MI</figcaption>
+    </div>
+    <div class="slide">
+      <img src="media/pictures/shadows.JPG" alt="Sculpture Park - Denver, CO">
+      <figcaption>SCULPTURE PARK — DENVER, CO</figcaption>
+    </div>
+    <div class="slide">
+      <img src="media/pictures/volcano.JPG" alt="Mauna Kea - Hawai'i">
+      <figcaption>MAUNA KEA — HAWAI'I</figcaption>
+    </div>
+    <div class="slide">
+      <img src="media/pictures/construction.jpg" alt="Sveti Stefan, Montenegro">
+      <figcaption>SVETI STEFAN, MONTENEGRO</figcaption>
+    </div>
+    <div class="slide">
+      <img src="media/pictures/santorini.jpg" alt="Santorini - Greek Islands">
+      <figcaption>SANTORINI — GREEK ISLANDS</figcaption>
+    </div>
+    <div class="slide">
+      <img src="media/pictures/mushi.JPG" alt="False Potato Beetle infected by Lancet Liver Fluke">
+      <figcaption>FALSE POTATO BEETLE (LEPTINOTARSA JUNCTA)<br>infected by the LANCET LIVER FLUKE (DICROCOELIUM DENDRITICUM)</figcaption>
+    </div>
+    <div class="slide">
+      <img src="media/pictures/switzerland.JPG" alt="Lauterbrunnen - Switzerland">
+      <figcaption>LAUTERBRUNNEN — SWITZERLAND</figcaption>
+    </div>
+    <div class="slide">
+      <img src="media/pictures/surfing.JPG" alt="Hamoa Beach - Maui">
+      <figcaption>HAMOA BEACH — MAUI</figcaption>
+    </div>
+    <div class="slide">
+      <img src="media/pictures/dome.jpg" alt="Dome">
+    </div>
+    <div class="slide">
+      <img src="media/pictures/forest_fire.jpg" alt="Uvala Przno, Montenegro">
+      <figcaption>UVALA PRZNO, MONTENEGRO</figcaption>
+    </div>
+  </div>
+
+  <button class="slide-arrow next" aria-label="Next photo">&#8594;</button>
+
+  <div class="slide-counter"><span id="slide-current">1</span> / <span id="slide-total"></span></div>
+</div>
+
+<script src="js/photography.js"></script>

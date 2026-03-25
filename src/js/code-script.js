@@ -1,4 +1,4 @@
-// This script prints the three strings below to the 'Code' page using the DOMWriter function. 
+// This script prints the three strings below to the 'Code' page using the DOMWriter function.
 
 //#region anagrams
 var anagrams = "\
@@ -299,49 +299,84 @@ void appendPunctuation(vector<string>& v) { <br> \
 ";
 // #endregion
 
+// #region randomReveal
+// Reveals all characters of text in random order over durationMs milliseconds.
+// Each character fades in via CSS opacity transition.
+// Returns a Promise that resolves once all characters are fully visible.
+function randomReveal(elementId, text, durationMs) {
+    return new Promise(function(resolve) {
+        const el = document.getElementById(elementId);
+
+        const spans = text.split('').map(function(ch) {
+            const span = document.createElement('span');
+            span.textContent = ch;
+            span.style.opacity = '0';
+            span.style.transition = 'opacity 0.25s ease';
+            el.appendChild(span);
+            return span;
+        });
+
+        // Fisher-Yates shuffle of indices
+        const indices = spans.map(function(_, i) { return i; });
+        for (let i = indices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const tmp = indices[i]; indices[i] = indices[j]; indices[j] = tmp;
+        }
+
+        const interval = (durationMs - 250) / spans.length;
+        indices.forEach(function(charIndex, order) {
+            setTimeout(function() {
+                spans[charIndex].style.opacity = '1';
+            }, order * interval);
+        });
+
+        // resolve after all fades complete
+        setTimeout(resolve, durationMs + 250);
+    });
+}
+// #endregion
+
 // #region DOMWriter
-// The following function writes text to an element in the related HTML DOM with simulated delay typing
+// Writes text to a DOM element with simulated typing delay.
+// Uses safe DOM APIs (createTextNode, createElement) instead of innerHTML.
 function DOMWriter(DOM_element, stringToPrint) {
-    var linebreak = document.createElement("br");
-    // using a Promise to simulate a delay
     const delay = ms => new Promise(res => setTimeout(res, ms));
     const print_code = async () => {
-        var word = "";
-        // loop through the input string, reading each word to check for the break symbol '<br>' or any nessesary spacing
-        for (var i = 0; i < stringToPrint.length; ++i) {
-            while (stringToPrint[i] != " " && i < stringToPrint.length) {
+        const el = document.getElementById(DOM_element);
+        let word = "";
+        for (let i = 0; i < stringToPrint.length; ++i) {
+            while (stringToPrint[i] !== " " && i < stringToPrint.length) {
                 word += stringToPrint[i++];
             }
-            if (word == "<br>") {
-                document.getElementById(DOM_element).appendChild(linebreak);
+            if (word === "<br>") {
+                el.appendChild(document.createElement("br"));
             } else {
-                for (j in word) {
-                    document.getElementById(DOM_element).innerHTML += word[j];
+                for (let j = 0; j < word.length; j++) {
+                    el.appendChild(document.createTextNode(word[j]));
                     let d = 60;
-                    // use a step function to caluclate delay between a print
-                    // f(x) = 60 if 0<x<15, else use the inverse equation below, which moves asymptotically to x = 10
                     if (i > 15) {
-                        d = Math.trunc((500/(i-5))+10);
+                        d = Math.trunc((500 / (i - 5)) + 10);
                     }
                     await delay(d);
                 }
-                if (i+1 < stringToPrint.length && stringToPrint[i+1] == " ") {
-                    // if there are two spaces in a row, assume a tab
-                    document.getElementById(DOM_element).innerHTML += "&ensp;";
+                if (i + 1 < stringToPrint.length && stringToPrint[i + 1] === " ") {
+                    el.appendChild(document.createTextNode('\u2002')); // en space
                 } else {
-                    document.getElementById(DOM_element).innerHTML += " ";
+                    el.appendChild(document.createTextNode(' '));
                 }
             }
             word = "";
         }
-    }
+    };
     print_code();
 }
 // #endregion
 
 // #region main
-// These functions are run concurently by nature of JavaScript's call stack
-DOMWriter("code-intro", intro);
-DOMWriter("code-column-left", anagrams);
-DOMWriter("code-column-right", generator);
+// 1. Reveal intro text randomly over 5 seconds.
+// 2. Once complete, begin typing both code columns simultaneously.
+randomReveal("code-intro", intro, 5000).then(function() {
+    DOMWriter("code-column-left", anagrams);
+    DOMWriter("code-column-right", generator);
+});
 // #endregion
